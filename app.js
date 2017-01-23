@@ -39,3 +39,8 @@ app.listen(appEnv.port, '0.0.0.0', function() {
 app.get('/', function(req, res){
   res.render('home');
 });
+
+app.post('/random', function(req, res){
+  var rnd = Math.floor(Math.random() * 11);
+  res.send({random: rnd});
+});
